@@ -1,0 +1,11 @@
+.gene_text { text-anchor:left; font-family:Verdana; font-size:18px; fill:blue; }
+
+.tick_text { text-anchor:middle; font-family:Verdana; font-size:12px; fill:black; }
+.ruler_line { stroke:black; stroke-width: 1; }
+
+.exon_rect { fill: blue; fill-opacity: 0.7; }
+.exon_line { stroke: blue; stroke-width: 0.5; }
+
+.junc_arc1 { shape-rendering: auto; fill: none; stroke: red; stroke-width: 2; }
+.junc_arc_text1 { text-anchor: middle; font-family: Arial; font-size:14px; fill: red; }
+
