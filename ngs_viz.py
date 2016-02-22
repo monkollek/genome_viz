@@ -81,7 +81,7 @@ def ruler_track(chr, start, end, scale, x_offset, y_offset, fout):
 		tick_interval = 1000
 		tick_text_interval = 1000
 	elif region_width < 100000:
-		tick_interval = 1000
+		tick_interval = 10000
 		tick_text_interval = 10000		
 	else:
 		tick_interval = 10000
@@ -263,7 +263,7 @@ def main(args):
 
 
 #/Applications/Inkscape.app/Contents/Resources/bin/inkscape -b "white" -z -e  /Users/monkol/dev/visualizations/test.png /Users/monkol/dev/visualizations/test4.svg
-#./bamparser.py -r 19:39062658-39078204 -o test4.svg -b GTEX-N7MS_muscle_RYR1.bam
+#./ngs_viz.py -r 19:39062658-39078204 -o test4.svg -b GTEX-N7MS_muscle_RYR1.bam
 
 if __name__ == '__main__':
 	
@@ -274,7 +274,6 @@ if __name__ == '__main__':
 	parser.add_argument('--hgnc_file', '-hf', help='hgnc file', default="./resources/hgnc_anno.txt.gz", required=False)
 	parser.add_argument('--gencode_bed_file', '-gbf', help='Gencode BED file', default="./resources/gencode.v19.exon.bed.gz", required=False)
 	parser.add_argument('--css_file', '-cf', help='CSS file', default="./resources/svg.css", required=False)
-
 
 	parser.add_argument('--width', '-iw', help='SVG image height', default=1280)
 	parser.add_argument('--height', '-ih', help='SVG image height', default=200)
