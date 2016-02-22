@@ -271,9 +271,9 @@ if __name__ == '__main__':
 	parser.add_argument('--bam', '-b', help='BAM File', required=True)
 	parser.add_argument('--gene', '-g', help='HGNC Gene Name', required=False)
 	parser.add_argument('--region', '-r', help='chr:start-end format, eg. 1:100-200', default="", required=False)
-	parser.add_argument('--hgnc_file', '-hf', help='hgnc file', default="hgnc_anno.txt.gz", required=False)
-	parser.add_argument('--gencode_bed_file', '-gbf', help='Gencode BED file', default="gencode.v19.exon.bed.gz", required=False)
-	parser.add_argument('--css_file', '-cf', help='CSS file', default="svg.css", required=False)
+	parser.add_argument('--hgnc_file', '-hf', help='hgnc file', default="./resources/hgnc_anno.txt.gz", required=False)
+	parser.add_argument('--gencode_bed_file', '-gbf', help='Gencode BED file', default="./resources/gencode.v19.exon.bed.gz", required=False)
+	parser.add_argument('--css_file', '-cf', help='CSS file', default="./resources/svg.css", required=False)
 
 
 	parser.add_argument('--width', '-iw', help='SVG image height', default=1280)
