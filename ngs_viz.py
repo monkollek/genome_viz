@@ -7,6 +7,10 @@ import re
 import gzip
 import pysam
 
+def filter_read(read):
+	return (read.is_duplicate or read.is_qcfail or read.is_unmapped or read.mapping_quality < 255)
+
+
 def get_junction_reads(file,chr,start,end):
 
 	junction_reads = {}
@@ -17,7 +21,7 @@ def get_junction_reads(file,chr,start,end):
 
 	for read in samfile.fetch(chr, start, end):
 
-	    if read.cigarstring:
+	    if read.cigarstring and not filter_read(read):
 	 		#match = re.search(r'^([0-9]+)M([0-9]+)N([0-9]+)M$', read.cigarstring)
 	 		match = junctions1.search(read.cigarstring)
 
@@ -263,7 +267,7 @@ def main(args):
 
 
 #/Applications/Inkscape.app/Contents/Resources/bin/inkscape -b "white" -z -e  /Users/monkol/dev/visualizations/test.png /Users/monkol/dev/visualizations/test4.svg
-#./ngs_viz.py -r 19:39062658-39078204 -o test4.svg -b GTEX-N7MS_muscle_RYR1.bam
+#./ngs_viz.py -r 19:39062658-39078204 -o test5.svg -b GTEX-N7MS_muscle_RYR1.bam
 
 if __name__ == '__main__':
 	
